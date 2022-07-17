@@ -1,0 +1,103 @@
+.introduccion {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.introduccion img{
+  border-radius: 4px;
+}
+
+.introduccion h1 {
+  font-size: 4.5rem;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.introduccion h1::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 100px;
+  background: url(../dec/detallechave.svg) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 30px;
+  left: -45px;
+  /* z-index: -1; */
+}
+
+.introduccion p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) {
+  .introduccion h1 {
+    font-size: 3.5rem;
+  }
+
+  .introduccion h1::before {
+    width: 30px;
+    height: 68px;
+    top: 30px;
+    left: -35px;
+  }
+
+  .introduccion p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introduccion {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .introduccion h1 {
+    font-size: 2.5rem;
+  }
+
+  .introduccion h1::before {
+    width: 10px;
+    height: 10px;
+    background: url(../dec/detalleponto.svg) no-repeat center;
+    top: 63px;
+    left: 85px;
+  }
+}
+
+@media (max-width: 650px) {
+  .introduccion h1 {
+    font-size: 1.5rem;
+  }
+
+  .introduccion h1::before {
+    display: none;
+  }
+
+  .introduccion p {
+    font-size: 0.8rem;
+  }
+}
+
+@media(max-width:400px){
+  .introduccion{
+    grid-template-columns: 1fr;
+    padding: 20px 20px;
+  }
+
+  .introduccion img{
+    display: none;
+  }
+
+  .introduccion h1, .introduccion p{
+    text-align: center;
+  }
+}
