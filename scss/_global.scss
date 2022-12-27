@@ -1,0 +1,131 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, p, ul, li, a{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $main-bg-color;
+  color: $text-color;
+  font-family: $font-1;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header {
+  transition: .2s;
+  &:hover{
+    box-shadow: 0px 1px 1px $light-gray;
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+    .menu{
+      display: flex;
+      gap: 1rem;
+      a{
+        display: inline-block;
+        position: relative;
+        &::after{
+          content: '';
+          display: block;
+          height: 2px;
+          width: 0px;
+          background: $light-orange;
+          margin-top: 4px;
+          position: absolute;
+          transition: .2s;
+        }
+        &:hover::after{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.main{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  .profile-img{
+    margin: 0 auto;
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid $light-gray;
+    transition: .5s;
+    &:hover{
+      transform: translateY(3px);
+    }
+  }
+  .main-data{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    h1{
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: .5rem;
+    }
+    p{
+      font-family: $font-2;
+    }
+    &::after{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: $light-orange;
+      margin: auto;
+      margin-top: 1rem;
+    }
+  }
+  .social-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    a:hover{
+      color: $light-orange;
+      transition: .2s;
+    }
+  }
+}
+
+.footer{
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
