@@ -1,3 +1,7 @@
+@mixin borderTest {
+  border: 1px solid orange
+}
+
 html {
   box-sizing: border-box;
 }
@@ -25,12 +29,15 @@ img{
 }
 
 body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background: $main-bg-color;
   color: $text-color;
   font-family: $font-1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container{
@@ -77,9 +84,8 @@ body{
 .main{
   margin-top: auto;
   margin-bottom: auto;
-  display: grid;
-  place-content: center;
-  text-align: center;
+  // display: grid;
+  // place-content: center;
   .profile-img{
     margin: 0 auto;
     width: 150px;
@@ -91,6 +97,7 @@ body{
     }
   }
   .main-data{
+    text-align: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
     h1{
@@ -125,7 +132,6 @@ body{
 }
 
 .footer{
-  width: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
