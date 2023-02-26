@@ -28,6 +28,17 @@ img{
   display: block;
 }
 
+@mixin link-hovered-after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: $light-orange;
+  margin-top: 4px;
+  position: absolute;
+  transition: .2s;
+}
+
 body{
   background: $main-bg-color;
   color: $text-color;
@@ -60,20 +71,21 @@ body{
     .menu{
       display: flex;
       gap: 1rem;
-      a{
+      a {
         display: inline-block;
         position: relative;
         &::after{
-          content: '';
-          display: block;
-          height: 2px;
-          width: 0px;
-          background: $light-orange;
-          margin-top: 4px;
-          position: absolute;
-          transition: .2s;
+          @include link-hovered-after;
+          // content: '';
+          // display: block;
+          // height: 2px;
+          // width: 0px;
+          // background: $light-orange;
+          // margin-top: 4px;
+          // position: absolute;
+          // transition: .2s;
         }
-        &:hover::after{
+        &:hover::after, &.active::after{
           width: 100%;
         }
       }
@@ -101,12 +113,13 @@ body{
     margin-top: 2rem;
     margin-bottom: 1rem;
     h1{
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 400;
       margin-bottom: .5rem;
     }
     p{
       font-family: $font-2;
+      font-weight: 700;
     }
     &::after{
       content: '';
