@@ -27,3 +27,9 @@ var typed = new Typed('.typed', {
   startDelay: 1000,
   cursorChar: '_',
 })
+
+// date
+
+const year = new Date();
+const date_year = document.querySelector('.date-year');
+date_year.innerHTML = year.getFullYear();
